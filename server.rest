@@ -1,0 +1,32 @@
+### to create the wallet
+POST http://localhost:5000/api/wallets
+Content-Type: application/json
+
+{
+  "name": "Soundararajan",
+  "balance": 10000,
+  "debt": -3123123
+}
+
+### to deposit the amount
+POST http://localhost:5000/api/wallets/698eff8396bf76e9d2c3a72c/deposit
+Content-Type: application/json
+
+{
+  "amount": 500
+}
+
+
+### to withdraw the amount
+POST http://localhost:5000/api/wallets/698f0dafbcbc62808d60ae51/withdraw
+Content-Type: application/json
+
+{
+  "amount": 10000
+}
+
+
+### to check the balance
+GET http://localhost:5000/api/wallets
+Content-Type: application/json
+
