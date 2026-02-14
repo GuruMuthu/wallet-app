@@ -4,11 +4,13 @@ const walletSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     phoneNumber: {
       type: Number,
       required: true,
+      unique: true,
       minLength: 10,
       maxLength: 10
     },

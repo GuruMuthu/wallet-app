@@ -3,13 +3,13 @@ POST http://localhost:5000/api/wallets
 Content-Type: application/json
 
 {
-  "name": "Guru G",
+  "name": "Guru K",
   "points": 300000,
-  "phoneNumber": 9013087661
+  "phoneNumber": 9010087661
 }
 
 ### to deposit the points
-POST http://localhost:5000/api/wallets/6990f7a29cac5eea44770b05/deposit
+POST http://localhost:5000/api/wallets/699103b6c04136d40799f8b0/deposit
 Content-Type: application/json
 
 {

@@ -17,20 +17,29 @@ const getWallets = async () => {
 };
 
 const deposit = async (id, points) => {
-  const wallet = await Wallet.findById(id);
+  const wallet = await Wallet.findByIdAndUpdate(
+    id,
+    { $inc: { points: points } },
+    { returnDocument: "after" }
+  );
+
   if (!wallet) throw new Error("Account not found");
 
-  wallet.points += points;
-  return await wallet.save();
+  return wallet;
 };
 
 const withdraw = async (id, points) => {
-  const wallet = await Wallet.findById(id);
-  if (!wallet) throw new Error("Account not found");
-  if (wallet.points < points) throw new Error(`Insufficient points. Available points is '${wallet.points}', but attempted withdrawal points is '${points}'.`);
-  wallet.points -= points;
-  return await wallet.save();
+  const wallet = await Wallet.findOneAndUpdate(
+    { _id: id, points: { $gte: points } },
+    { $inc: { points: -points } },
+    { returnDocument: "after" }
+  );
+   if (wallet.points < points) throw new Error(`Insufficient points. Available points is '${wallet.points}', but attempted withdrawal points is '${points}'.`);
+
+  return wallet;
 };
+
+
 
 module.exports = {
   createWallet,
