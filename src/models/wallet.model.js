@@ -6,14 +6,16 @@ const walletSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-    balance: {
+    phoneNumber: {
+      type: Number,
+      required: true,
+      minLength: 10,
+      maxLength: 10
+    },
+    points: {
       type: Number,
       default: 0,
       min: 0
-    },
-    debt: {
-      type: Number,
-      max: -1
     }
   },
   { timestamps: true }

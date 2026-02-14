@@ -20,7 +20,7 @@ const getWallets = async (req, res, next) => {
 
 const deposit = async (req, res, next) => {
   try {
-    const wallet = await walletService.deposit(req.params.id, req.body.amount);
+    const wallet = await walletService.deposit(req.params.id, req.body.points);
     res.json(wallet);
   } catch (err) {
     next(err);
@@ -29,7 +29,7 @@ const deposit = async (req, res, next) => {
 
 const withdraw = async (req, res, next) => {
   try {
-    const wallet = await walletService.withdraw(req.params.id, req.body.amount);
+    const wallet = await walletService.withdraw(req.params.id, req.body.points);
     res.json(wallet);
   } catch (err) {
     next(err);

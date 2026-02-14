@@ -3,30 +3,30 @@ POST http://localhost:5000/api/wallets
 Content-Type: application/json
 
 {
-  "name": "Soundararajan",
-  "balance": 10000,
-  "debt": -3123123
+  "name": "Guru G",
+  "points": 300000,
+  "phoneNumber": 9013087661
 }
 
-### to deposit the amount
-POST http://localhost:5000/api/wallets/698eff8396bf76e9d2c3a72c/deposit
+### to deposit the points
+POST http://localhost:5000/api/wallets/6990f7a29cac5eea44770b05/deposit
 Content-Type: application/json
 
 {
-  "amount": 500
+  "points": 50000
 }
 
 
-### to withdraw the amount
-POST http://localhost:5000/api/wallets/698f0dafbcbc62808d60ae51/withdraw
+### to withdraw the points
+POST http://localhost:5000/api/wallets/6990f7a29cac5eea44770b05/withdraw
 Content-Type: application/json
 
 {
-  "amount": 10000
+  "points": 100000
 }
 
 
-### to check the balance
+### to check the points
 GET http://localhost:5000/api/wallets
 Content-Type: application/json
 
