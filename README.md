@@ -12,7 +12,7 @@
    mongosh       [ If you see: Current Mongosh Log ID, Connecting to:, Using MongoDB:, Using Mongosh:, Then MongoDB is running correctly. ] Type : exit in Command Prompt or Terminal..
 
 4. Open the Project in VS code editor.
-   Example path:   "PS C:\your-file-path\wallet-app-2026-main\"
+   Example path:   "PS C:\your-file-path\wallet-app-main\wallet-app-main"
    
 5. Initialize Node Project.
    Inside the project folder, run: npm init -y
